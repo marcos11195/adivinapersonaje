@@ -48,6 +48,7 @@ const personajes = [
     { nombre: "Atreus", img: "img/atreus.png" },
     { nombre: "Aloy", img: "img/aloy.png" },
     { nombre: "Ellie", img: "img/ellie.png" },
+    { nombre: "N.Cortex", img: "img/cortex.png" },
     { nombre: "Joel", img: "img/joel.png" }
 ];
 
@@ -106,7 +107,7 @@ function mostrarPregunta() {
 
     // opciones de respuesta
     // se asegura que no haya opciones repetidas
-    // el bucle while se repite hasta tener 3 opciones unicas
+    // el bucle while se repite hasta tener el numero indiaco de opciones unicas
     // el if dentro del bucle comprueba si la opcion ya existe en el array
     // si no existe se añade al array de opciones
     var opciones = [personaje.nombre];
