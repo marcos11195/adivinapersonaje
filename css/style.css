@@ -1,7 +1,7 @@
 body {
   font-family: system-ui, sans-serif;
   background: url("../img/background.gif") no-repeat center center fixed;
-  background-size: cover;   /* que el gif cubra toda la pantalla */
+  background-size: cover;
   color: #f0f0f0;
   display: flex;
   justify-content: center;
@@ -9,21 +9,35 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+#titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000; /* negro puro */
+  text-shadow: 
+    0 0 4px rgba(80, 80, 80, 0.8),
+    0 0 8px rgba(120, 120, 120, 0.6),
+    0 0 12px rgba(180, 180, 180, 0.5),
+    0 0 20px rgba(220, 220, 220, 0.4); /* halo gris plateado */
+  margin-bottom: 25px;
+}
+
+
 #progreso {
   width: 100%;
   max-width: 300px;
   height: 20px;
-  background: #2a2d3a;
+  background: #3a2d2d; /* marrón oscuro retro */
   border-radius: 10px;
-  margin: 0 auto 20px auto;
+  margin: 10px auto 30px auto;
   overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 #barra {
   height: 100%;
-  width: 0%; /* empieza vacía */
-  background: linear-gradient(90deg, #00b7ff, #39ff14);
-  transition: width 0.3s ease; /* animación suave */
+  width: 0%;
+  background: linear-gradient(90deg, #f7c5cc, #c9a7eb, #a5c9ca); /* pastel rosado-lila-azul */
+  transition: width 0.6s ease; /* más lento, relajado */
 }
 
 
@@ -39,32 +53,31 @@ body {
   font-weight: bold;
   display: block;
   margin-bottom: 8px;
-  color: #00e0ff; /* azul neón */
+  color: #00e0ff;
   text-shadow: 0 0 6px #00e0ff;
 }
 
-/* Slider base */
 #numPreguntas {
   -webkit-appearance: none;
   appearance: none;
   width: 80%;
   height: 10px;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.6); /* barra oscura semitransparente */
+  background: rgba(0, 0, 0, 0.6);
   outline: none;
   cursor: pointer;
-  box-shadow: 0 0 8px #00e0ff; /* glow neón */
+  box-shadow: 0 0 8px #00e0ff;
 }
 
-/* Thumb (el circulito que se mueve) */
+/* Thumb (unificado para webkit y moz) */
 #numPreguntas::-webkit-slider-thumb,
 #numPreguntas::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
   height: 20px;
-  border-radius: 4px; /* cuadrado pixelado */
-  background: #39ff14; /* verde neón */
+  border-radius: 4px;
+  background: #39ff14;
   border: 2px solid #00e0ff;
   cursor: pointer;
   box-shadow: 0 0 6px #39ff14;
@@ -75,6 +88,7 @@ body {
 #numPreguntas::-moz-range-thumb:hover {
   transform: scale(1.2);
 }
+
 /* Caja fija para las imágenes */
 #imagen {
   width: 100%;
@@ -89,9 +103,7 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.hidden {
-  opacity: 0;
-}
+.hidden { opacity: 0; }
 
 /* Opciones en columna, botones uniformes */
 #opciones {
