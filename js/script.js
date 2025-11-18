@@ -80,6 +80,12 @@ function crearBoton(opcion, correcto) {
     };
     return btn;
 }
+// actualiza el progreso de la barra de estado inferior
+// para tener un acceso visual a la cantidad de preguntas respondidas
+function actualizarProgreso() {
+    var porcentaje = ((indice) / ronda.length) * 100;
+    document.getElementById("barra").style.width = porcentaje + "%";
+}
 
 // ---------- Juego ----------
 // Inicia una nueva ronda del juego
@@ -99,6 +105,7 @@ function iniciarJuego() {
     indice = 0;
     aciertos = 0;
     mostrarPregunta();
+    actualizarProgreso();
 }
 
 // actualizar número y reiniciar juego al mover el slider
@@ -189,6 +196,7 @@ function comprobarRespuesta(botonElegido, opcion, correcto) {
     }
 
     indice++;
+    actualizarProgreso();
     setTimeout(mostrarPregunta, 1500);
 }
 

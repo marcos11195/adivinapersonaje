@@ -9,6 +9,22 @@ body {
   min-height: 100vh;
   margin: 0;
 }
+#progreso {
+  width: 100%;
+  max-width: 300px;
+  height: 20px;
+  background: #2a2d3a;
+  border-radius: 10px;
+  margin: 0 auto 20px auto;
+  overflow: hidden;
+}
+
+#barra {
+  height: 100%;
+  width: 0%; /* empieza vacía */
+  background: linear-gradient(90deg, #00b7ff, #39ff14);
+  transition: width 0.3s ease; /* animación suave */
+}
 
 
 #quiz {
