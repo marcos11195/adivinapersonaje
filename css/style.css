@@ -1,0 +1,117 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #0e0f14;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#quiz {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+}
+
+/* Caja fija para las imágenes */
+#imagen {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border: 2px solid #2a2d3a;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #10131a;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Opciones en columna, botones uniformes */
+#opciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+#opciones button {
+  width: 100%;
+  max-width: 300px;
+  min-height: 48px;
+  text-align: center;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #00b7ff;
+  color: #041016;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#opciones button:hover:not(:disabled) {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+#opciones button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#mensaje {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.correcto { color: #39ff14; }
+.incorrecto { color: #ff3366; }
+
+#reiniciar {
+  margin-top: 20px;
+  background: #39ff14;
+  color: #041016;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#reiniciar:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* ---------- Media Queries ---------- */
+
+/* Pantallas pequeñas (<400px) */
+@media (max-width: 400px) {
+  #imagen {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  #opciones button {
+    max-width: 100%;   /* ocupa todo el ancho disponible */
+    min-height: 44px;  /* un poco más compacto */
+  }
+}
+
+/* Pantallas medianas (entre 401px y 768px) */
+@media (max-width: 768px) {
+  #imagen {
+    max-width: 250px;
+    height: 250px;
+  }
+
+  #opciones button {
+    max-width: 250px;
+  }
+}
