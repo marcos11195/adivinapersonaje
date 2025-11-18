@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuizPersonajes</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-</head>
-<body>
-  <div id="quiz">
-    <img id="imagen" alt="Personaje" />
-    <div id="opciones"></div>
-    <div id="mensaje"></div>
-    <button id="reiniciar">Jugar de nuevo</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizPersonajes</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <div id="quiz">
+      <div id="configuracion">
+        <label for="numPreguntas">Número de preguntas:
+          <span id="valorPreguntas">5</span>
+        </label>
+        <input type="range" id="numPreguntas" min="1" max="20" value="5" />
+      </div>
+      <img id="imagen" alt="Personaje" />
+      <div id="opciones"></div>
+      <div id="mensaje"></div>
+      <button id="reiniciar">Jugar de nuevo</button>
+    </div>
 
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>

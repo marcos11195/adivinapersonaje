@@ -87,15 +87,40 @@ function crearBoton(opcion, correcto) {
 // barajarArray y reseteando las variables de estado para
 // comenzar desde el principio
 function iniciarJuego() {
+    // leer valor del slider
+    var cantidad = parseInt(document.getElementById("numPreguntas").value, 10);
+
+    // barajar personajes
     var barajados = barajarArray(personajes.slice());
-    ronda = barajados.slice(0, 10); // se puede ajustar para jugar mas rondas
+
+    // elegir la cantidad seleccionada
+    ronda = barajados.slice(0, cantidad);
+
     indice = 0;
     aciertos = 0;
     mostrarPregunta();
 }
+
+// actualizar número y reiniciar juego al mover el slider
+// actualiza el número en tiempo real
+document.getElementById("numPreguntas").addEventListener("input", function () {
+    document.getElementById("valorPreguntas").textContent = this.value;
+});
+
+// reinicia solo cuando se suelta el slider
+document.getElementById("numPreguntas").addEventListener("change", function () {
+    iniciarJuego();
+});
+
+
+document.getElementById("reiniciar").onclick = iniciarJuego;
+
+// iniciar al cargar
+iniciarJuego();
 // Muestra el personaje actual y las opciones de respuesta
 // en caso de haber terminado la ronda muestra el resultado final
 function mostrarPregunta() {
+   
     if (indice >= ronda.length) {
         document.getElementById("mensaje").innerHTML =
             "Juego terminado. Aciertos: " + aciertos + "/" + ronda.length;
@@ -103,7 +128,18 @@ function mostrarPregunta() {
     }
 
     var personaje = ronda[indice];
-    document.getElementById("imagen").src = personaje.img;
+    var img = document.getElementById("imagen");
+
+    // efecto fade-out → cambio → fade-in
+    img.classList.add("hidden");
+    setTimeout(function() {
+        img.src = personaje.img;
+        img.classList.remove("hidden");
+    }, 300);
+
+
+
+
 
     // opciones de respuesta
     // se asegura que no haya opciones repetidas
